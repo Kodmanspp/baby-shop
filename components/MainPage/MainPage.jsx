@@ -5,8 +5,10 @@ import telka from '../../public/icons/telka.png';
 import top_arrow from '../../public/icons/top_arrow.svg';
 import comment_main from '../../public/icons/comment_main_page.svg';
 import elipse from '../../public/icons/Ellipse.png';
+import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
-import ClothesCard from '../../components/MainPageCards/ClothesCard';
+import ClothesCard from '../MainPageCards/ClothesCard';
+import Card from '../MainPageReviewCard/Card';
 
 function MainPage() {
   const headerArray = [
@@ -218,6 +220,42 @@ function MainPage() {
         </div>
         <div className={styles.all_catalog_button}>
           <button>Весь каталог</button>
+        </div>
+      </div>
+      {/* reviews */}
+      <div className={styles.reviews_wrapper}>
+        <div className={styles.reviews}>
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className={styles.all_reviews_button}>
+          <button>все отзывы</button>
+        </div>
+        <div className={styles.send_reviews_wrapper}>
+          <div>
+            <Image src={profileIcon} alt='profileIcon' />
+          </div>
+          <div style={{ width: '100%' }}>
+            <div style={{ marginBottom: 20 }}>
+              <span>Анонимный пользователь</span>
+            </div>
+            <div className={styles.send_review_action}>
+              <div className={styles.textarea_wrapper}>
+                <textarea />
+              </div>
+              <div className={styles.action_button_wrapper}>
+                <div>
+                  <button className={styles.login_button}>войти</button>
+                </div>
+                <div>
+                  <button className={styles.publish_button}>
+                    опубликовать
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -51,6 +51,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: 1240px) {
+      padding: 0 80px;
+    }
+    @media screen and (max-width: 1070px) {
+      padding: 0 50px;
+      justify-content: space-around;
+    }
+    @media screen and (max-width: 678px) {
+      padding: 0;
+      justify-content: center;
+      min-width: 100%;
+    }
     img {
       cursor: pointer;
     }
@@ -84,19 +96,52 @@
       }
     }
   }
-  
 }
-
-.navbar_routes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 170px;
-  height: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  a {
-    text-decoration: none;
-    color: #000;
-    text-transform: uppercase;
+.navbar_routes_wrapper {
+  .navbar_routes {
+    padding: 0 170px;
+    display: flex;
+    height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    @media screen and (max-width: 1240px) {
+      padding: 0 120px;
+    }
+    @media screen and (max-width: 1070px) {
+      padding: 0 50px;
+    }
+    @media screen and (max-width: 840px) {
+      display: none;
+    }
+    align-items: center;
+    justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
+  .navbar_burger {
+    display: none;
+    height: 50px;
+    padding: 0 80px;
+    cursor: pointer;
+    @media screen and (max-width: 840px) {
+      display: flex;
+      height: 50px;
+      padding: 0 120px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: flex-end;
+      button {
+        display: flex;
+        align-items: center;
+        outline: none;
+        background-color: #fff;
+        border: none;
+        font-size: 30px;
+      }
+    }
   }
 }
