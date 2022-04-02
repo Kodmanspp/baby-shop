@@ -30,12 +30,12 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/Delivery/Delivery'}>
+            <Link href={'/'}>
               <a>Как заказать</a>
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/Delivery/Delivery'}>
               <a>Доставка</a>
             </Link>
           </div>
@@ -45,7 +45,7 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/Contact/Contact'}>
               <a>Контакты</a>
             </Link>
           </div>
