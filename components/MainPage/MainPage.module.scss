@@ -114,6 +114,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 30px;
     button {
       overflow: none;
       border: none;
@@ -129,6 +130,53 @@
     }
   }
 }
-
-.textarea_wrapper {
+.send_reviews_wrapper {
+  display: flex;
+  width: 100%;
+}
+.send_review_action {
+  display: grid;
+  grid-template-columns: 2fr 0.6fr;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+  .textarea_wrapper {
+    width: 100%;
+    textarea {
+      width: 100%;
+      resize: none;
+      height: 120px;
+      border-radius: 20px;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid rgba(2, 55, 57, 0.8);
+    }
+  }
+  .action_button_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-left: 20px;
+    button {
+      width: 100%;
+    }
+    .login_button {
+      outline: none;
+      border: none;
+      background-color: #1f6d70;
+      height: 40px;
+      border-radius: 30px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .publish_button {
+      outline: none;
+      border: none;
+      background-color: #c4c4c4;
+      height: 40px;
+      border-radius: 30px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
 }

@@ -15,7 +15,7 @@ function Layout({ children }) {
       <div className={styles.navbar_routes_wrapper}>
         <div className={styles.navbar_routes}>
           <div>
-            <Link href={'/'}>
+            <Link href={'/mainpage'}>
               <a>главная</a>
             </Link>
           </div>
@@ -25,12 +25,12 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href='/AboutMagazine/About'>
               <a>о магазине</a>
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/Delivery/Delivery'}>
               <a>Как заказать</a>
             </Link>
           </div>

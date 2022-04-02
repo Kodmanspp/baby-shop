@@ -236,17 +236,23 @@ function MainPage() {
           <div>
             <Image src={profileIcon} alt='profileIcon' />
           </div>
-          <div>
-            <div>
+          <div style={{ width: '100%' }}>
+            <div style={{ marginBottom: 20 }}>
               <span>Анонимный пользователь</span>
             </div>
-            <div>
+            <div className={styles.send_review_action}>
               <div className={styles.textarea_wrapper}>
                 <textarea />
               </div>
-              <div>
-                <button>войти</button>
-                <button>опубликовать</button>
+              <div className={styles.action_button_wrapper}>
+                <div>
+                  <button className={styles.login_button}>войти</button>
+                </div>
+                <div>
+                  <button className={styles.publish_button}>
+                    опубликовать
+                  </button>
+                </div>
               </div>
             </div>
           </div>
