@@ -10,7 +10,7 @@ import favoriteIcon from '../../../public/icons/favorite_icon.svg';
 import cartIcon from '../../../public/icons/cart_icon.svg';
 import SearchField from '../../SearchField/SearchField';
 import Image from 'next/image';
-
+import { MenuOutlined } from '@ant-design/icons';
 function Navbar() {
   const locationArray = ['Москва', 'Москва', 'Москва', 'Москва'];
   return (
@@ -67,27 +67,34 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className={styles.navbar_routes}>
-        <div>
-          <a href={'/'}>главная</a>
+      <div className={styles.navbar_routes_wrapper}>
+        <div className={styles.navbar_routes}>
+          <div>
+            <a href={'/'}>главная</a>
+          </div>
+          <div>
+            <a href={'/'}>каталог</a>
+          </div>
+          <div>
+            <a href={'/'}>о магазине</a>
+          </div>
+          <div>
+            <a href={'/'}>Как заказать</a>
+          </div>
+          <div>
+            <a href={'/'}>Доставка</a>
+          </div>
+          <div>
+            <a href={'/'}>Отзывы</a>
+          </div>
+          <div>
+            <a href={'/'}>Контакты</a>
+          </div>
         </div>
-        <div>
-          <a href={'/'}>каталог</a>
-        </div>
-        <div>
-          <a href={'/'}>о магазине</a>
-        </div>
-        <div>
-          <a href={'/'}>Как заказать</a>
-        </div>
-        <div>
-          <a href={'/'}>Доставка</a>
-        </div>
-        <div>
-          <a href={'/'}>Отзывы</a>
-        </div>
-        <div>
-          <a href={'/'}>Контакты</a>
+        <div className={styles.navbar_burger}>
+          <button>
+            <MenuOutlined />
+          </button>
         </div>
       </div>
     </div>

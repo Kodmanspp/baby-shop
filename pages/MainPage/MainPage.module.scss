@@ -2,6 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 1246px) {
+    display: block;
+    .right_side {
+      align-items: center;
+      justify-content: center;
+    }
+    .left_side {
+      margin-top: 20px;
+    }
+  }
   .left_side {
     min-width: 500px;
     color: rgba(2, 55, 57, 0.8);
