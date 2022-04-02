@@ -1,8 +1,96 @@
 import React from 'react';
+import styles from './Navbar.module.scss';
+import locationIcon from '../../../public/icons/location_clothes.svg';
+import commentIcon from '../../../public/icons/comment_icon.svg';
+import phoneIcon from '../../../public/icons/phone.svg';
+import questionIcon from '../../../public/icons/vopros_icon.svg';
+import logoIcon from '../../../public/icons/logo.svg';
+import profileIcon from '../../../public/icons/people_icon.svg';
+import favoriteIcon from '../../../public/icons/favorite_icon.svg';
+import cartIcon from '../../../public/icons/cart_icon.svg';
+import SearchField from '../../SearchField/SearchField';
+import Image from 'next/image';
 
-function Navbar(props) {
+function Navbar() {
+  const locationArray = ['Москва', 'Москва', 'Москва', 'Москва'];
   return (
-    <div></div>
+    <div className={styles.navbar_wrapper}>
+      <div className={styles.navbar_info}>
+        <div className={styles.left_side}>
+          <div className={styles.select_wrapper}>
+            <Image width='16' height='16' src={locationIcon} alt='location' />
+            <select>
+              {locationArray.map((item, index) => (
+                <option key={index} value={item}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.info_wrapper}>
+            <Image width='16' height='16' src={commentIcon} alt='location' />
+            <span>info@baby-shop.ru</span>
+          </div>
+          <div className={styles.phone_wrapper}>
+            <Image width='16' height='16' src={phoneIcon} alt='location' />
+            <span>8(000)111-22-33</span>
+          </div>
+        </div>
+        <div className={styles.right_side}>
+          <div>
+            <Image src={questionIcon} alt='location' />
+          </div>
+        </div>
+      </div>
+      <div className={styles.navbar_action}>
+        <div className={styles.logo_navbar}>
+          <Image src={logoIcon} alt='location' />
+        </div>
+        <div className={styles.right_side}>
+          <div className={styles.search_wrapper}>
+            <SearchField />
+          </div>
+          <div className={styles.profile_wrapper}>
+            <a href={'/'}>
+              <Image width={35} height={35} src={profileIcon} alt='loca' />
+            </a>
+          </div>
+          <div className={styles.favorite_wrapper}>
+            <a href={'/'}>
+              <Image width={35} height={35} src={favoriteIcon} alt='loca' />
+            </a>
+          </div>
+          <div className={styles.cart_wrapper}>
+            <a href={'/'}>
+              <Image width={35} height={35} src={cartIcon} alt='loca' />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className={styles.navbar_routes}>
+        <div>
+          <a href={'/'}>главная</a>
+        </div>
+        <div>
+          <a href={'/'}>каталог</a>
+        </div>
+        <div>
+          <a href={'/'}>о магазине</a>
+        </div>
+        <div>
+          <a href={'/'}>Как заказать</a>
+        </div>
+        <div>
+          <a href={'/'}>Доставка</a>
+        </div>
+        <div>
+          <a href={'/'}>Отзывы</a>
+        </div>
+        <div>
+          <a href={'/'}>Контакты</a>
+        </div>
+      </div>
+    </div>
   );
 }
 
