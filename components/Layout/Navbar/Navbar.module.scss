@@ -1,0 +1,100 @@
+.navbar_wrapper {
+  .navbar_info {
+    background-color: #6b6b6b;
+    height: 50px;
+    color: #fff;
+    padding: 0 120px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      cursor: pointer;
+    }
+    .select_wrapper {
+      select {
+        color: #fff;
+        background: none;
+        outline: none;
+        border: none;
+        font-size: 18px;
+      }
+    }
+    .left_side {
+      display: flex;
+      .info_wrapper {
+        padding: 0 46px;
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 10px;
+        }
+      }
+      .phone_wrapper {
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 10px;
+        }
+      }
+      .select_wrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .navbar_action {
+    background-color: #1f6d70;
+    height: 60px;
+    padding: 0 120px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    img {
+      cursor: pointer;
+    }
+    .logo_navbar {
+      display: flex;
+      align-items: center;
+    }
+    .right_side {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 50%;
+      .search_wrapper {
+        .search_inp {
+          border: none;
+          outline: none;
+          background: inherit;
+          border-bottom: 2px solid #fff;
+          color: #fff;
+          position: relative;
+          padding-left: 25px;
+          font-size: 18px;
+          &::placeholder {
+            color: #fff;
+            margin-right: 20px;
+          }
+        }
+        .search_img {
+          position: absolute;
+        }
+      }
+    }
+  }
+  .navbar_routes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 170px;
+    height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    a {
+      text-decoration: none;
+      color: #000;
+      text-transform: uppercase;
+    }
+  }
+}

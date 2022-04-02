@@ -1,0 +1,89 @@
+.main_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .left_side {
+    min-width: 500px;
+    color: rgba(2, 55, 57, 0.8);
+    border-radius: 30px;
+    transform: translateX(-120px);
+    padding-right: 20px;
+    padding-left: 120px;
+    font-weight: bold;
+    border: 3px solid rgba(2, 55, 57, 0.2);
+    .header_title {
+      span {
+        font-size: 30px;
+      }
+    }
+    .hedaer_sub_title {
+      margin-bottom: 42px;
+      display: flex;
+      align-items: center;
+      span {
+        padding-left: 20px;
+        font-size: 24px;
+      }
+    }
+    .header_button {
+      background-color: #fff;
+      outline: none;
+      border: 3px solid #1f6d70;
+      border-radius: 30px;
+      min-width: 300px;
+      height: 60px;
+      font-size: 24px;
+      color: rgba(2, 55, 57, 0.8);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 30px;
+      &:active {
+        color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(31, 129, 129, 0.8);
+      }
+    }
+  }
+  .right_side {
+    display: flex;
+    .action_wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+}
+.new_collection_wrapper {
+  background: rgba(31, 109, 112, 0.5);
+  padding: 30px 120px;
+  .new_collection_title {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .new_collection_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+  }
+  .all_catalog_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    button {
+      border: none;
+      min-width: 180px;
+      border-radius: 20px;
+      color: #fff;
+      background-color: #1f6d70;
+      text-transform: uppercase;
+      height: 40px;
+      &:active {
+        background-color: #335758;
+      }
+    }
+  }
+}
