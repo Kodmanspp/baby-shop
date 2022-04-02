@@ -1,19 +1,18 @@
-import Navbar from './Navbar/Navbar';
-import Footer from './Footer/Footer';
-import styles from '../Layout/Navbar/Navbar.module.scss';
 import { MenuOutlined } from '@ant-design/icons';
 import Link from 'next/link';
-import Menu from '../Menu/Menu';
-import { useState } from 'react';
+import React from 'react';
+import styles from './Menu.module.scss';
 
-function Layout({ children }) {
-  const [menuActive, setMenuActive] = useState(false);
-  console.log(menuActive);
+function Menu({ menuActive, setMenuActive }) {
   return (
-    <div>
-      <Navbar />
-      <div className={styles.navbar_routes_wrapper}>
-        <div className={styles.navbar_routes}>
+    <div className={menuActive ? styles.menuActive : styles.menu}>
+      <div className={styles.menu_content}>
+        <div className={styles.navbar_burger}>
+          <button onClick={() => setMenuActive(!menuActive)}>
+            <MenuOutlined />
+          </button>
+        </div>
+        <div className={styles.navbar_links}>
           <div>
             <Link href={'/'}>
               <a>главная</a>
@@ -50,17 +49,9 @@ function Layout({ children }) {
             </Link>
           </div>
         </div>
-        <div className={styles.navbar_burger}>
-          <button onClick={() => setMenuActive(!menuActive)}>
-            <MenuOutlined />
-          </button>
-        </div>
       </div>
-      {children}
-      <Footer />
-      <Menu menuActive={menuActive} setMenuActive={setMenuActive} />
     </div>
   );
 }
 
-export default Layout;
+export default Menu;

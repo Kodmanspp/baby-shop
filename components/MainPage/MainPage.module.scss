@@ -63,6 +63,7 @@
     }
   }
 }
+
 .new_collection_wrapper {
   background: rgba(31, 109, 112, 0.5);
   padding: 30px 120px;
@@ -96,4 +97,38 @@
       }
     }
   }
+}
+
+.reviews_wrapper {
+  padding: 40px 120px;
+  .reviews {
+    grid-gap: 30px;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 991px) {
+      display: block;
+    }
+  }
+  .all_reviews_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    button {
+      overflow: none;
+      border: none;
+      background-color: #1f6d70;
+      min-width: 180px;
+      color: #fff;
+      height: 40px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      &:active {
+        background-color: #315f61;
+      }
+    }
+  }
+}
+
+.textarea_wrapper {
 }
