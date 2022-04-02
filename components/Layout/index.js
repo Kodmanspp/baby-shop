@@ -1,5 +1,6 @@
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
+import 'antd/dist/antd.css';
 import styles from '../Layout/Navbar/Navbar.module.scss';
 import { MenuOutlined } from '@ant-design/icons';
 import Link from 'next/link';
