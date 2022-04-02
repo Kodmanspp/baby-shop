@@ -19,12 +19,12 @@ function Layout({ children }) {
         </Link>
         </div>
         <div>
-        <Link href={'/'}>
+        <Link href='/AboutMagazine/About'>
             <a>о магазине</a> 
         </Link>
         </div>
         <div>
-        <Link href={'/'}>
+        <Link href={'/Delivery/Delivery'}>
             <a>Как заказать</a> 
         </Link>
         </div>
