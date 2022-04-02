@@ -67,29 +67,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div className={styles.navbar_routes}>
-        <div>
-          <a href={'/'}>главная</a>
-        </div>
-        <div>
-          <a href={'/'}>каталог</a>
-        </div>
-        <div>
-          <a href={'/'}>о магазине</a>
-        </div>
-        <div>
-          <a href={'/'}>Как заказать</a>
-        </div>
-        <div>
-          <a href={'/'}>Доставка</a>
-        </div>
-        <div>
-          <a href={'/'}>Отзывы</a>
-        </div>
-        <div>
-          <a href={'/'}>Контакты</a>
-        </div>
-      </div>
+     
     </div>
   );
 }
