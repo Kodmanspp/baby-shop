@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
@@ -9,177 +9,18 @@ import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
 import ClothesCard from '../MainPageCards/ClothesCard';
 import Card from '../MainPageReviewCard/Card';
+import { accordionArray, cardArray, headerArray } from './MainPageData';
+import Accordion from '../Accordion/Accordion';
 
 function MainPage() {
-  const headerArray = [
-    { title: 'МИНИМАЛЬНАЯ СУММА ЗАКАЗА - 8000 ₽' },
-    { title: 'КАЧЕСТВЕННЫЕ ВЕЩИ' },
-    { title: 'БЫСТРАЯ ДОСТАВКА' },
-    { title: 'БОЛЬШИЕ СКИДКИ' },
-  ];
+  const [selectedAccor, setSelectedAccor] = useState(null);
 
-  const cardArray = [
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Пионер”',
-      years: '2-4 лет',
-      type: null,
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '900',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: null,
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: null,
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-    {
-      title: 'Футболка “Радуга”',
-      years: '2-4 лет',
-      type: 'новинка',
-      article: '1111',
-      height: '54-56',
-      priceOf: 'за 10 шт',
-      size: '1-7',
-      price: '1300',
-    },
-  ];
+  const toggleAccordion = (index) => {
+    if (selectedAccor === index) {
+      return setSelectedAccor(null);
+    }
+    setSelectedAccor(index);
+  };
   return (
     <>
       <div className={styles.main_wrapper}>
@@ -211,6 +52,7 @@ function MainPage() {
             </a>
           </div>
         </div>
+
         {/* new collection wrapper */}
       </div>
       <div className={styles.new_collection_wrapper}>
@@ -255,6 +97,14 @@ function MainPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className={styles.accordion_wrapper}>
+          <h2>ВОПРОС-ОТВЕТ</h2>
+          <div className={styles.accordion_zxc}>
+            {accordionArray.map((item, index) => {
+              return <Accordion title={item.question} content={item.answer} />;
+            })}
           </div>
         </div>
       </div>
