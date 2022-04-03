@@ -1,5 +1,6 @@
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
+import 'antd/dist/antd.css';
 import styles from '../Layout/Navbar/Navbar.module.scss';
 import { MenuOutlined } from '@ant-design/icons';
 import Link from 'next/link';
@@ -33,12 +34,12 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/Delivery/Delivery'}>
+            <Link href={'/'}>
               <a>Как заказать</a>
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/Delivery/Delivery'}>
               <a>Доставка</a>
             </Link>
           </div>
@@ -48,7 +49,7 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/Contact/Contact'}>
               <a>Контакты</a>
             </Link>
           </div>

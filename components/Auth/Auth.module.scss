@@ -1,0 +1,12 @@
+.container{
+    padding: 40px 9% 40px;
+}
+.breadcrumb{
+    text-align: center;
+    .auth_link{
+        text-decoration: none;
+    }
+    .active { 
+        font-size: 24px;
+    }
+}
