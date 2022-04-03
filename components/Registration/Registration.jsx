@@ -35,7 +35,7 @@ function Registration() {
           <Input className={cl.input} placeholder="Пароль" />
           <Input className={`${cl.input} ${cl.lastInput}`} placeholder="Пароль еще раз" />
           </div>
-          <button type="submit">Войти на сайт</button>
+          <button type="submit">Зарегистрироваться</button>
         </form>
         <div className={cl.anotherAuth}>
           <p>Войти через</p>

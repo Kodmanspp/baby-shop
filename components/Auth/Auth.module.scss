@@ -59,7 +59,7 @@
 
     button {
         margin: 0 auto;
-        width: 30%;
+        width: 300px;
         font-weight: 600;
         font-size: 28px;
         line-height: 38px;
@@ -90,6 +90,15 @@
 
     .links {
         display: flex;
-        grid-gap: 85px;
+        grid-gap: 7vw;
+    }
+
+}
+@media (max-width: 700px) {
+    .form{
+        .inputs{
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
