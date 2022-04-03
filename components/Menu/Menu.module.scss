@@ -12,14 +12,19 @@
     background-color: #fff;
     .navbar_links {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-size: 20px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      font-size: 30px;
+      padding-left: 20px;
       margin-top: 20px;
+      height: 100%;
+      flex-direction: column;
       div {
         margin-bottom: 20px;
         text-transform: uppercase;
+        a {
+          color: #000;
+        }
       }
     }
     .navbar_burger {
@@ -62,11 +67,12 @@
     background-color: #fff;
     .navbar_links {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
       font-size: 20px;
       margin-top: 20px;
+      height: 100%;
+      flex-direction: column;
       div {
         margin-bottom: 20px;
         text-transform: uppercase;
