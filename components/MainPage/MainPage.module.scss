@@ -21,6 +21,12 @@
     padding-left: 120px;
     font-weight: bold;
     border: 3px solid rgba(2, 55, 57, 0.2);
+    @media screen and (max-width: 768px) {
+      transform: translateX(0);
+      padding: 20px;
+      margin: 20px;
+      min-width: auto;
+    }
     .header_title {
       span {
         font-size: 30px;
@@ -56,17 +62,15 @@
   }
   .right_side {
     display: flex;
-    .action_wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
   }
 }
 
 .new_collection_wrapper {
   background: rgba(31, 109, 112, 0.5);
   padding: 30px 120px;
+  @media screen and (max-width: 768px) {
+    padding: 30px 20px !important;
+  }
   .new_collection_title {
     text-align: center;
     color: #fff;
@@ -101,6 +105,9 @@
 
 .reviews_wrapper {
   padding: 40px 120px;
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px;
+  }
   .reviews {
     grid-gap: 30px;
     display: flex;

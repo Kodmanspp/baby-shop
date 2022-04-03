@@ -1,7 +1,13 @@
 .footer_wrapper {
+  a {
+    color: inherit;
+  }
   background-color: #115354;
   color: #fff;
   padding: 30px 120px;
+  @media screen and (max-width: 768px) {
+    padding: 30px 20px;
+  }
   .header_footer {
     display: flex;
     justify-content: space-around;
