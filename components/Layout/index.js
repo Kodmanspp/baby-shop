@@ -5,6 +5,7 @@ import { MenuOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Menu from '../Menu/Menu';
 import { useState } from 'react';
+import 'antd/dist/antd.css';
 
 function Layout({ children }) {
   const [menuActive, setMenuActive] = useState(false);
@@ -40,7 +41,7 @@ function Layout({ children }) {
             </Link>
           </div>
           <div>
-            <Link href={'/'}>
+            <Link href={'/reviewspage'}>
               <a>Отзывы</a>
             </Link>
           </div>
