@@ -6,10 +6,12 @@ import Link from 'next/link';
 import Menu from '../Menu/Menu';
 import { useState } from 'react';
 import 'antd/dist/antd.css';
+import top_arrow from '../../public/icons/top_arrow.svg';
+import comment_main from '../../public/icons/comment_main_page.svg';
+import Image from 'next/image';
 
 function Layout({ children }) {
   const [menuActive, setMenuActive] = useState(false);
-  console.log(menuActive);
   return (
     <div>
       <Navbar />
@@ -55,6 +57,22 @@ function Layout({ children }) {
           <button onClick={() => setMenuActive(!menuActive)}>
             <MenuOutlined />
           </button>
+        </div>
+      </div>
+      <div className={styles.action_wrapper}>
+        <div>
+          <Link href={'/'}>
+            <a>
+              <Image src={top_arrow} width={44} height={44} alt={'lol'} />
+            </a>
+          </Link>
+        </div>
+        <div>
+          <Link href={'/'}>
+            <a>
+              <Image src={comment_main} width={50} height={50} alt={'lol'} />
+            </a>
+          </Link>
         </div>
       </div>
       {children}

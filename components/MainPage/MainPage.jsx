@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
-import top_arrow from '../../public/icons/top_arrow.svg';
-import comment_main from '../../public/icons/comment_main_page.svg';
 import elipse from '../../public/icons/Ellipse.png';
 import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
@@ -43,14 +41,6 @@ function MainPage() {
             <Image src={pocan} alt={'lol'} />
             <Image src={telka} alt={'lol'} />
           </div>
-          <div className={styles.action_wrapper}>
-            <a href={'/'}>
-              <Image src={top_arrow} width={44} height={44} alt={'lol'} />
-            </a>
-            <a href={'/'}>
-              <Image src={comment_main} width={50} height={50} alt={'lol'} />
-            </a>
-          </div>
         </div>
 
         {/* new collection wrapper */}
@@ -75,9 +65,6 @@ function MainPage() {
           <button>все отзывы</button>
         </div>
         <div className={styles.send_reviews_wrapper}>
-          <div>
-            <Image src={profileIcon} alt='profileIcon' />
-          </div>
           <div style={{ width: '100%' }}>
             <div style={{ marginBottom: 20 }}>
               <span>Анонимный пользователь</span>
@@ -103,7 +90,13 @@ function MainPage() {
           <h2>ВОПРОС-ОТВЕТ</h2>
           <div className={styles.accordion_zxc}>
             {accordionArray.map((item, index) => {
-              return <Accordion title={item.question} content={item.answer} />;
+              return (
+                <Accordion
+                  key={index}
+                  title={item.question}
+                  content={item.answer}
+                />
+              );
             })}
           </div>
         </div>
