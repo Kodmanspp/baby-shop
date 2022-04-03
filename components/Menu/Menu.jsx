@@ -1,7 +1,11 @@
 import { MenuOutlined } from '@ant-design/icons';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './Menu.module.scss';
+import profileIcon from '../../public/icons/people_icon.svg';
+import favoriteIcon from '../../public/icons/favorite_icon.svg';
+import cartIcon from '../../public/icons/cart_icon.svg';
 
 function Menu({ menuActive, setMenuActive }) {
   return (
@@ -47,6 +51,37 @@ function Menu({ menuActive, setMenuActive }) {
             <Link href={'/'}>
               <a>Контакты</a>
             </Link>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              width: '100%',
+            }}
+          >
+            <div style={{ marginRight: 20 }} className={styles.profile_wrapper}>
+              <Link href={'/'}>
+                <a>
+                  <Image width={50} height={50} src={profileIcon} alt='loca' />
+                </a>
+              </Link>
+            </div>
+            <div
+              style={{ marginRight: 20 }}
+              className={styles.favorite_wrapper}
+            >
+              <Link href={'/'}>
+                <a>
+                  <Image width={50} height={50} src={favoriteIcon} alt='loca' />
+                </a>
+              </Link>
+            </div>
+            <div className={styles.cart_wrapper}>
+              <Link href={'/'}>
+                <a>
+                  <Image width={50} height={50} src={cartIcon} alt='loca' />
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

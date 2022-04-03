@@ -10,8 +10,10 @@ import favoriteIcon from '../../../public/icons/favorite_icon.svg';
 import cartIcon from '../../../public/icons/cart_icon.svg';
 import SearchField from '../../SearchField/SearchField';
 import Image from 'next/image';
+import Link from 'next/link';
+import { MenuOutlined } from '@ant-design/icons';
 
-function Navbar() {
+function Navbar({ menuActive, setMenuActive }) {
   const locationArray = ['Москва', 'Москва', 'Москва', 'Москва'];
   return (
     <div className={styles.navbar_wrapper}>
@@ -50,20 +52,31 @@ function Navbar() {
           <div className={styles.search_wrapper}>
             <SearchField />
           </div>
+          <div className={styles.navbar_burger}>
+            <button onClick={() => setMenuActive(!menuActive)}>
+              <MenuOutlined style={{ color: 'white' }} />
+            </button>
+          </div>
           <div className={styles.profile_wrapper}>
-            <a href={'/'}>
-              <Image width={35} height={35} src={profileIcon} alt='loca' />
-            </a>
+            <Link href={'/'}>
+              <a>
+                <Image width={35} height={35} src={profileIcon} alt='loca' />
+              </a>
+            </Link>
           </div>
           <div className={styles.favorite_wrapper}>
-            <a href={'/'}>
-              <Image width={35} height={35} src={favoriteIcon} alt='loca' />
-            </a>
+            <Link href={'/'}>
+              <a>
+                <Image width={35} height={35} src={favoriteIcon} alt='loca' />
+              </a>
+            </Link>
           </div>
           <div className={styles.cart_wrapper}>
-            <a href={'/'}>
-              <Image width={35} height={35} src={cartIcon} alt='loca' />
-            </a>
+            <Link href={'/'}>
+              <a>
+                <Image width={35} height={35} src={cartIcon} alt='loca' />
+              </a>
+            </Link>
           </div>
         </div>
       </div>

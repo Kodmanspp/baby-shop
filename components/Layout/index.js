@@ -14,7 +14,7 @@ function Layout({ children }) {
   const [menuActive, setMenuActive] = useState(false);
   return (
     <div>
-      <Navbar />
+      <Navbar menuActive={menuActive} setMenuActive={setMenuActive} />
       <div className={styles.navbar_routes_wrapper}>
         <div className={styles.navbar_routes}>
           <div>
@@ -53,11 +53,11 @@ function Layout({ children }) {
             </Link>
           </div>
         </div>
-        <div className={styles.navbar_burger}>
+        {/* <div className={styles.navbar_burger}>
           <button onClick={() => setMenuActive(!menuActive)}>
             <MenuOutlined />
           </button>
-        </div>
+        </div> */}
       </div>
       <div className={styles.action_wrapper}>
         <div>
