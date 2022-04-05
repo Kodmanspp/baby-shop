@@ -46,7 +46,11 @@ function Navbar({ menuActive, setMenuActive }) {
       </div>
       <div className={styles.navbar_action}>
         <div className={styles.logo_navbar}>
-          <Image src={logoIcon} alt='location' />
+          <Link href={'/'}>
+            <a>
+              <Image src={logoIcon} alt='location' />
+            </a>
+          </Link>
         </div>
         <div className={styles.right_side}>
           <div className={styles.search_wrapper}>
@@ -65,14 +69,14 @@ function Navbar({ menuActive, setMenuActive }) {
             </Link>
           </div>
           <div className={styles.favorite_wrapper}>
-            <Link href={'/'}>
+            <Link href={'/favorite'}>
               <a>
                 <Image width={35} height={35} src={favoriteIcon} alt='loca' />
               </a>
             </Link>
           </div>
-          <div className={styles.cart_wrapper}>
-            <Link href={'/'}>
+          <div style={{ display: 'flex' }} className={styles.cart_wrapper}>
+            <Link href={'/cart'}>
               <a>
                 <Image width={35} height={35} src={cartIcon} alt='loca' />
               </a>

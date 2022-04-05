@@ -70,7 +70,8 @@
     }
     .logo_navbar {
       display: flex;
-      align-items: center;
+      justify-content: center;
+      height: 100%;
     }
     .right_side {
       display: flex;
@@ -136,11 +137,14 @@
   }
 }
 .navbar_routes_wrapper {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  .navbar {
+    height: 30px;
+  }
   .navbar_routes {
     padding: 0 170px;
     display: flex;
     height: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 100%;
     @media screen and (max-width: 1240px) {
       padding: 0 120px;

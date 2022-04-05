@@ -2,13 +2,20 @@ import Link from "next/link";
 import React from "react";
 import cl from "./Auth.module.scss";
 import { useRouter } from "next/router";
+import google from "../../static/gmail-icon.svg";
+import yandex from "../../static/yandex-icon.svg";
+import mail from "../../static/mail-icon.svg";
+import vk from "../../static/vk-icon.svg";
+import Image from "next/image";
+import { Input } from "antd";
+
 function Auth() {
   const router = useRouter();
   return (
     <div className={cl.container}>
       <div className={cl.breadcrumb}>
         <div
-          className={`${cl.auth_link} ${
+          className={`${cl.link} ${
             router.pathname === "/auth" ? cl.active : cl.noramal
           }`}
         >
@@ -16,7 +23,7 @@ function Auth() {
         </div>
         /
         <div
-          className={`${cl.reg_link} ${
+          className={`${cl.link} ${
             router.pathname === "/registration" ? cl.active : cl.noramal
           }`}
         >
@@ -24,17 +31,19 @@ function Auth() {
         </div>
       </div>
       <form className={cl.form}>
-        <input type="text" placeholder="Электронная почта" />
-        <input type="text" placeholder="Пароль" />
+        <div className={cl.inputs}>
+        <Input className={cl.input} placeholder="Электронная почта" />
+        <Input className={cl.input} placeholder="Пароль" />
+        </div>
         <button type="submit">Войти на сайт</button>
       </form>
       <div className={cl.anotherAuth}>
         <p>Войти через</p>
         <div className={cl.links}>
-          <div>VK</div>
-          <div>VK</div>
-          <div>VK</div>
-          <div>VK</div>
+          <Image src={vk} alt="mail" />
+          <Image src={google} alt="mail" />
+          <Image src={yandex} alt="mail" />
+          <Image src={mail} alt="mail" />
         </div>
       </div>
     </div>

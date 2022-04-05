@@ -1,0 +1,22 @@
+.favorite_wrapper {
+  .favorite_header_wrapper {
+    height: 50px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding-left: 120px;
+    padding-right: 150px;
+    &_child {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+      width: 100%;
+      div {
+        margin-right: 100px;
+      }
+    }
+  }
+  margin-bottom: 20px;
+  .favorite_card_wrapper {
+    padding: 20px 120px;
+  }
+}
