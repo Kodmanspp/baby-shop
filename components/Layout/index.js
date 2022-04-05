@@ -10,55 +10,63 @@ import 'antd/dist/antd.css';
 import top_arrow from '../../public/icons/top_arrow.svg';
 import comment_main from '../../public/icons/comment_main_page.svg';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 function Layout({ children }) {
   const [menuActive, setMenuActive] = useState(false);
+  const router = useRouter();
+
   return (
     <div>
       <Navbar menuActive={menuActive} setMenuActive={setMenuActive} />
       <div className={styles.navbar_routes_wrapper}>
-        <div className={styles.navbar_routes}>
-          <div>
-            <Link href={'/mainpage'}>
-              <a>главная</a>
-            </Link>
+        {router.pathname === '/favorite' ? null : (
+          <div
+            className={
+              router.pathname === '/cart' ? styles.navbar : styles.navbar_routes
+            }
+          >
+            {router.pathname === '/cart' ? null : (
+              <div className={styles.navbar_routes}>
+                <div>
+                  <Link href={'/mainpage'}>
+                    <a>главная</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href='/'>
+                    <a>каталог</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href='/AboutMagazine/About'>
+                    <a>о магазине</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href={'/'}>
+                    <a>Как заказать</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href={'/Delivery/Delivery'}>
+                    <a>Доставка</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href={'/reviewspage'}>
+                    <a>Отзывы</a>
+                  </Link>
+                </div>
+                <div>
+                  <Link href={'/Contact/Contact'}>
+                    <a>Контакты</a>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
-          <div>
-            <Link href='/'>
-              <a>каталог</a>
-            </Link>
-          </div>
-          <div>
-            <Link href='/AboutMagazine/About'>
-              <a>о магазине</a>
-            </Link>
-          </div>
-          <div>
-            <Link href={'/'}>
-              <a>Как заказать</a>
-            </Link>
-          </div>
-          <div>
-            <Link href={'/Delivery/Delivery'}>
-              <a>Доставка</a>
-            </Link>
-          </div>
-          <div>
-            <Link href={'/reviewspage'}>
-              <a>Отзывы</a>
-            </Link>
-          </div>
-          <div>
-            <Link href={'/Contact/Contact'}>
-              <a>Контакты</a>
-            </Link>
-          </div>
-        </div>
-        {/* <div className={styles.navbar_burger}>
-          <button onClick={() => setMenuActive(!menuActive)}>
-            <MenuOutlined />
-          </button>
-        </div> */}
+        )}
       </div>
       <div className={styles.action_wrapper}>
         <div>

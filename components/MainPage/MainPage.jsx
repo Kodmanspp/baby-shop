@@ -89,7 +89,8 @@ function MainPage() {
         <div className={styles.accordion_wrapper}>
           <h2>ВОПРОС-ОТВЕТ</h2>
           <div className={styles.accordion_zxc}>
-            {accordionArray.map((item, index) => {
+            <Accordion />
+            {/* {accordionArray.map((item, index) => {
               return (
                 <Accordion
                   key={index}
@@ -97,7 +98,7 @@ function MainPage() {
                   content={item.answer}
                 />
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>
