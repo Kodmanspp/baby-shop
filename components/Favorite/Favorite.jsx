@@ -1,31 +1,14 @@
 import React from 'react';
+import { cardArray } from '../MainPage/MainPageData';
 import styles from './Favorite.module.scss';
-import FavoriteCard from './FavoriteCard';
+import ClothesCard from '../MainPageCards/ClothesCard';
 
 function Favorite() {
   return (
     <div className={styles.favorite_wrapper}>
-      <div className={styles.favorite_header_wrapper}>
-        <div className={styles.favorite_header_wrapper_child}>
-          <div>
-            <span>Товар</span>
-          </div>
-          <div>
-            <span>Наименование</span>
-          </div>
-          <div>
-            <span>Количество</span>
-          </div>
-          <div>
-            <span>Наличие</span>
-          </div>
-          <div>
-            <span>Цена</span>
-          </div>
-        </div>
-      </div>
-      <div className={styles.favorite_card_wrapper}>
-        <FavoriteCard />
+      <ClothesCard cardArray={cardArray} />
+      <div>
+        <button className={styles.all_catalog__button}>смотреть каталог</button>
       </div>
     </div>
   );
