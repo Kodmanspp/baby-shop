@@ -1,5 +1,5 @@
 import React from 'react';
-import Catalog from '../components/Catalog/Catalog';
+import Catalog from '../../components/Catalog/Catalog';
 
 function catalog(props) {
     return (
