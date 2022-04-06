@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Collapse } from 'antd';
+import 'antd/dist/antd.css';
 
+const { Panel } = Collapse;
 const Accordion = (props) => {
-  const { Panel } = Collapse;
   const text = `
     A dog is a type of domesticated animal.
     Known for its loyalty and faithfulness,

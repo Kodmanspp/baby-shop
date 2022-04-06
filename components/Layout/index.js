@@ -1,12 +1,10 @@
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
-import 'antd/dist/antd.css';
 import styles from '../Layout/Navbar/Navbar.module.scss';
 import { MenuOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 import Menu from '../Menu/Menu';
 import { useState } from 'react';
-import 'antd/dist/antd.css';
 import top_arrow from '../../public/icons/top_arrow.svg';
 import comment_main from '../../public/icons/comment_main_page.svg';
 import Image from 'next/image';
@@ -20,13 +18,15 @@ function Layout({ children }) {
     <div>
       <Navbar menuActive={menuActive} setMenuActive={setMenuActive} />
       <div className={styles.navbar_routes_wrapper}>
-        {router.pathname === '/favorite' ? null : (
+        {router.pathname === '/cart' ? null : (
           <div
             className={
-              router.pathname === '/cart' ? styles.navbar : styles.navbar_routes
+              router.pathname === '/favorite'
+                ? styles.navbar
+                : styles.navbar_routes
             }
           >
-            {router.pathname === '/cart' ? null : (
+            {router.pathname === '/favorite' ? null : (
               <div className={styles.navbar_routes}>
                 <div>
                   <Link href={'/mainpage'}>
@@ -34,7 +34,7 @@ function Layout({ children }) {
                   </Link>
                 </div>
                 <div>
-                  <Link href='/'>
+                  <Link href='/catalog'>
                     <a>каталог</a>
                   </Link>
                 </div>
