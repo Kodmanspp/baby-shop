@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, {useId} from "react";
+import React from "react";
 import cl from "./details.module.scss";
 import img from "../../public/icons/baby_clothes.png";
 
@@ -58,7 +58,7 @@ function Detailt() {
             <div className={cl.properties}>
               {detailsInfo.details.map((item) => {
                 return (
-                  <p key={useId()}>{item.name} <strong>{item.value}</strong></p>
+                  <p key={item.name}>{item.name} <strong>{item.value}</strong></p>
                 )
               })}
             </div>
