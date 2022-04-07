@@ -71,6 +71,24 @@
   @media screen and (max-width: 768px) {
     padding: 30px 20px !important;
   }
+  @media screen and (min-width: 1500px) {
+    padding: 30px 200px;
+  }
+  @media screen and (min-width: 1800px) {
+    padding: 30px 300px;
+  }
+  @media screen and (min-width: 1900px) {
+    padding: 30px 350px;
+  }
+  @media screen and (min-width: 2000px) {
+    padding: 30px 400px;
+  }
+  @media screen and (min-width: 2100px) {
+    padding: 30px 500px;
+  }
+  @media screen and (min-width: 2200px) {
+    padding: 30px 550px;
+  }
   .new_collection_title {
     text-align: center;
     color: #fff;
