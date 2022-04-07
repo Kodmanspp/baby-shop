@@ -75,7 +75,7 @@ function Navbar({ menuActive, setMenuActive }) {
               </a>
             </Link>
           </div>
-          <div style={{ display: 'flex' }} className={styles.cart_wrapper}>
+          <div className={styles.cart_wrapper}>
             <Link href={'/cart'}>
               <a>
                 <Image width={35} height={35} src={cartIcon} alt='loca' />
