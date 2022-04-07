@@ -3,12 +3,13 @@ import styles from './Cart.module.scss';
 import clothe from '../../public/icons/baby_clothes.png';
 import Image from 'next/image';
 import galka from '../../public/icons/galka.svg';
+import close from '../../public/icons/cross 1.svg';
 
 function CartCard({ item }) {
   return (
     <div className={styles.cart_card}>
-      <div style={{ width: '70%' }} className={styles.cart_image}>
-        <Image src={clothe} alt='clothe' />
+      <div className={styles.cart_image}>
+        <Image width={194} height={186} src={clothe} alt='clothe' />
       </div>
       <div className={styles.cart_info}>
         <div>
@@ -37,11 +38,11 @@ function CartCard({ item }) {
         </div>
       </div>
       <div className={styles.cart_amount}>
-        <button>-</button>
-        <div style={{ padding: '5px' }}>
+        <div>
+          <button>-</button>
           <span>1</span>
+          <button>+</button>
         </div>
-        <button>+</button>
       </div>
       <div className={styles.cart_existence}>
         <Image src={galka} alt='galke' />
@@ -49,7 +50,9 @@ function CartCard({ item }) {
       <div className={styles.cart_price}>
         <span>1300 ₽</span>
         <div>
-          <button>X</button>
+          <button>
+            <Image src={close} alt='close' />
+          </button>
         </div>
       </div>
     </div>
