@@ -36,7 +36,7 @@
     @media screen and (max-width: 1060px) {
       padding: 0 20px;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       display: none;
     }
     &_child {
@@ -65,13 +65,13 @@
   width: 100%;
   padding: 20px 0;
   border-bottom: 1px solid #c4c4c4;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 836px) {
     display: block;
   }
   .cart_image {
     min-width: 194px;
     height: 186px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -81,7 +81,7 @@
   .cart_info {
     padding: 6px 0;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -132,13 +132,13 @@
       background-color: inherit;
       cursor: pointer;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       padding: 20px 100px;
     }
   }
   .cart_existence {
     padding: 8px 0;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -147,7 +147,7 @@
   .cart_amount {
     display: flex;
     align-items: flex-start;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 836px) {
       display: flex;
       align-items: center;
       justify-content: center;
