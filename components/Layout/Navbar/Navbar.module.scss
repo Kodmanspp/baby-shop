@@ -32,12 +32,19 @@
         span {
           margin-left: 10px;
         }
+        @media screen and (max-width: 622px) {
+          font-size: 12px;
+          padding: 0 20px;
+        }
       }
       .phone_wrapper {
         display: flex;
         align-items: center;
         span {
           margin-left: 10px;
+        }
+        @media screen and (max-width: 622px) {
+          font-size: 12px;
         }
       }
       .select_wrapper {
