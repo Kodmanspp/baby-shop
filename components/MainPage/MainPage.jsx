@@ -9,16 +9,9 @@ import ClothesCard from '../MainPageCards/ClothesCard';
 import Card from '../MainPageReviewCard/Card';
 import { accordionArray, cardArray, headerArray } from './MainPageData';
 import Accordion from '../Accordion/Accordion';
+import SimpleAccordion from '../Accordion/Accordion';
 
 function MainPage() {
-  const [selectedAccor, setSelectedAccor] = useState(null);
-
-  const toggleAccordion = (index) => {
-    if (selectedAccor === index) {
-      return setSelectedAccor(null);
-    }
-    setSelectedAccor(index);
-  };
   return (
     <>
       <div className={styles.main_wrapper}>
@@ -91,7 +84,13 @@ function MainPage() {
           <div className={styles.accordion_zxc}>
             {accordionArray.map((item, index) => {
               return (
-                <Accordion
+                // <Accordion
+                //   key={index}
+                //   index={index}
+                //   title={item.question}
+                //   content={item.answer}
+                // />
+                <SimpleAccordion
                   key={index}
                   title={item.question}
                   content={item.answer}
