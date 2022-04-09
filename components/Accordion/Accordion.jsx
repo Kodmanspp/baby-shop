@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Accordion = (props) => {
-  const [active, setActive] = useState(false);
-
+export default function SimpleAccordion(props) {
   return (
-    <div className={`accordion ${active ? 'active' : ''}`}>
-      <div className='accordion__title' onClick={() => setActive(!active)}>
-        <span>{props.title}</span>
-      </div>
-      <div className='accordion__content'>{props.content}</div>
+    <div>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls='panel1a-content'
+          id='panel1a-header'
+        >
+          <Typography>{props.title}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{props.content}</Typography>
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
-};
-
-export default Accordion;
+}
