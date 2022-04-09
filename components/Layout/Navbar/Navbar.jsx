@@ -8,13 +8,18 @@ import logoIcon from '../../../public/icons/logo.svg';
 import profileIcon from '../../../public/icons/people_icon.svg';
 import favoriteIcon from '../../../public/icons/favorite_icon.svg';
 import cartIcon from '../../../public/icons/cart_icon.svg';
+import activeCartIcon from '../../../public/icons/active_cart.svg';
+import activeFavoriteIcon from '../../../public/icons/active_favorite.svg';
 import SearchField from '../../SearchField/SearchField';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MenuOutlined } from '@ant-design/icons';
+import { useRouter } from 'next/router';
 
 function Navbar({ menuActive, setMenuActive }) {
+  const router = useRouter();
   const locationArray = ['Москва', 'Москва', 'Москва', 'Москва'];
+
   return (
     <div className={styles.navbar_wrapper}>
       <div className={styles.navbar_info}>
@@ -71,14 +76,28 @@ function Navbar({ menuActive, setMenuActive }) {
           <div className={styles.favorite_wrapper}>
             <Link href={'/favorite'}>
               <a>
-                <Image width={35} height={35} src={favoriteIcon} alt='loca' />
+                <Image
+                  width={35}
+                  height={35}
+                  src={
+                    router.pathname === '/favorite'
+                      ? activeFavoriteIcon
+                      : favoriteIcon
+                  }
+                  alt='loca'
+                />
               </a>
             </Link>
           </div>
-          <div style={{ display: 'flex' }} className={styles.cart_wrapper}>
+          <div className={styles.cart_wrapper}>
             <Link href={'/cart'}>
               <a>
-                <Image width={35} height={35} src={cartIcon} alt='loca' />
+                <Image
+                  width={35}
+                  height={35}
+                  src={router.pathname === '/cart' ? activeCartIcon : cartIcon}
+                  alt='loca'
+                />
               </a>
             </Link>
           </div>

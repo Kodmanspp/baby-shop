@@ -5,21 +5,31 @@ import Image from 'next/image';
 import favoriteIcon from '../../public/icons/favorite.svg';
 import palkaIcon from '../../public/icons/palkaebanaya.svg';
 import cartIcon from '../../public/icons/cart.svg';
+<<<<<<< HEAD
 function ClothesCard({cardRef, cardArray }) {
+=======
+function ClothesCard({ cardArray }) {
+  console.log(cardArray);
+>>>>>>> dev
   return (
     <>
-      {cardArray.map((item, index) => {
+      {cardArray.map((item) => {
         return (
+<<<<<<< HEAD
           <div ref={cardRef} key={index} className={styles.card_wrapper}>
             <span className={styles.card_year}>2-4 лет</span>
+=======
+          <div key={item.id} className={styles.card_wrapper}>
+            <span className={styles.card_year}>{item.year} лет</span>
+>>>>>>> dev
             <span className={styles.card_type}>новинка</span>
             <div className={styles.card_clothes__image}>
-              <Image src={clothe} alt='clothes' />
+              <img width={180} height={180} src={item.image} alt='clothes' />
             </div>
             <div className={styles.card_about_clothes}>
               <div>
                 <div>
-                  <span className={styles.card_title}>Футболка “Радуга”</span>
+                  <span className={styles.card_title}>{item.title}</span>
                 </div>
                 <div>
                   Артикуль:{' '}
@@ -30,14 +40,16 @@ function ClothesCard({cardRef, cardArray }) {
                 </div>
                 <div>
                   Цена:{' '}
-                  <span className={styles.card_about__title}>за 10 шт</span>
+                  <span className={styles.card_about__title}>
+                    за {item.price_for} шт
+                  </span>
                 </div>
                 <div>
                   Размер: <span className={styles.card_about__title}>1-7</span>
                 </div>
               </div>
               <div className={styles.price_wrapper}>
-                <h4>1300 ₽</h4>
+                <h4>{item.price} ₽</h4>
               </div>
             </div>
             <div className={styles.card_action_buttons}>
