@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
@@ -10,8 +10,22 @@ import Card from '../MainPageReviewCard/Card';
 import { accordionArray, cardArray, headerArray } from './MainPageData';
 import Accordion from '../Accordion/Accordion';
 import SimpleAccordion from '../Accordion/Accordion';
+import {
+  fetchNewCollection,
+  newCollectionSelectors,
+} from '../../redux/slice/newCollection.slice';
+import { useDispatch, useSelector } from 'react-redux';
 
 function MainPage() {
+  const dispatch = useDispatch();
+  const allNewCollection = useSelector((state) =>
+    newCollectionSelectors.selectAll(state)
+  );
+  console.log(allNewCollection);
+
+  useEffect(() => {
+    dispatch(fetchNewCollection());
+  }, []);
   return (
     <>
       <div className={styles.main_wrapper}>
@@ -41,13 +55,12 @@ function MainPage() {
       <div className={styles.new_collection_wrapper}>
         <h1 className={styles.new_collection_title}>новая коллекция</h1>
         <div className={styles.new_collection_card}>
-          <ClothesCard cardArray={cardArray} />
+          <ClothesCard cardArray={allNewCollection} />
         </div>
         <div className={styles.all_catalog_button}>
           <button>Весь каталог</button>
         </div>
       </div>
-      {/* reviews */}
       <div className={styles.reviews_wrapper}>
         <div className={styles.reviews}>
           <Card />
@@ -84,12 +97,6 @@ function MainPage() {
           <div className={styles.accordion_zxc}>
             {accordionArray.map((item, index) => {
               return (
-                // <Accordion
-                //   key={index}
-                //   index={index}
-                //   title={item.question}
-                //   content={item.answer}
-                // />
                 <SimpleAccordion
                   key={index}
                   title={item.question}
