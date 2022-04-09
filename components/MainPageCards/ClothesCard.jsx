@@ -6,7 +6,6 @@ import favoriteIcon from '../../public/icons/favorite.svg';
 import palkaIcon from '../../public/icons/palkaebanaya.svg';
 import cartIcon from '../../public/icons/cart.svg';
 function ClothesCard({ cardArray }) {
-  console.log(cardArray);
   return (
     <>
       {cardArray.map((item) => {

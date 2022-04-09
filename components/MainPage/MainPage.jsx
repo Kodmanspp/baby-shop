@@ -3,12 +3,10 @@ import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
 import elipse from '../../public/icons/Ellipse.png';
-import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
 import ClothesCard from '../MainPageCards/ClothesCard';
 import Card from '../MainPageReviewCard/Card';
 import { accordionArray, cardArray, headerArray } from './MainPageData';
-import Accordion from '../Accordion/Accordion';
 import SimpleAccordion from '../Accordion/Accordion';
 import {
   fetchNewCollection,
@@ -21,7 +19,6 @@ function MainPage() {
   const allNewCollection = useSelector((state) =>
     newCollectionSelectors.selectAll(state)
   );
-  console.log(allNewCollection);
 
   useEffect(() => {
     dispatch(fetchNewCollection());
