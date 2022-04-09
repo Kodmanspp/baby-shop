@@ -5,12 +5,12 @@ import Image from 'next/image';
 import favoriteIcon from '../../public/icons/favorite.svg';
 import palkaIcon from '../../public/icons/palkaebanaya.svg';
 import cartIcon from '../../public/icons/cart.svg';
-function ClothesCard({ cardArray }) {
+function ClothesCard({cardRef, cardArray }) {
   return (
     <>
       {cardArray.map((item, index) => {
         return (
-          <div key={index} className={styles.card_wrapper}>
+          <div ref={cardRef} key={index} className={styles.card_wrapper}>
             <span className={styles.card_year}>2-4 лет</span>
             <span className={styles.card_type}>новинка</span>
             <div className={styles.card_clothes__image}>
