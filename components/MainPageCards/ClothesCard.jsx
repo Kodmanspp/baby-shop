@@ -5,23 +5,13 @@ import Image from 'next/image';
 import favoriteIcon from '../../public/icons/favorite.svg';
 import palkaIcon from '../../public/icons/palkaebanaya.svg';
 import cartIcon from '../../public/icons/cart.svg';
-<<<<<<< HEAD
-function ClothesCard({cardRef, cardArray }) {
-=======
 function ClothesCard({ cardArray }) {
-  console.log(cardArray);
->>>>>>> dev
   return (
     <>
       {cardArray.map((item) => {
         return (
-<<<<<<< HEAD
-          <div ref={cardRef} key={index} className={styles.card_wrapper}>
-            <span className={styles.card_year}>2-4 лет</span>
-=======
           <div key={item.id} className={styles.card_wrapper}>
             <span className={styles.card_year}>{item.year} лет</span>
->>>>>>> dev
             <span className={styles.card_type}>новинка</span>
             <div className={styles.card_clothes__image}>
               <img width={180} height={180} src={item.image} alt='clothes' />
