@@ -39,13 +39,13 @@ const About = () => {
           </p>
         </div>
         <div className={styles.about_two}>
-          <Image src={img1} alt='error' />
+          <Image width={200} height={280} src={img1} alt='error' />
         </div>
       </div>
 
       <div className={styles.about_block_two}>
         <div className={styles.about_two_img}>
-          <Image src={img2} alt='error' />
+          <Image width={200} height={280} src={img2} alt='error' />
         </div>
 
         <div className={styles.about_one}>

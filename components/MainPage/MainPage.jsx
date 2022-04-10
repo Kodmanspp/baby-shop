@@ -3,25 +3,23 @@ import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
 import elipse from '../../public/icons/Ellipse.png';
-import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
 import ClothesCard from '../MainPageCards/ClothesCard';
 import Card from '../MainPageReviewCard/Card';
 import { accordionArray, cardArray, headerArray } from './MainPageData';
-import Accordion from '../Accordion/Accordion';
 import SimpleAccordion from '../Accordion/Accordion';
 import {
   fetchNewCollection,
   newCollectionSelectors,
 } from '../../redux/slice/newCollection.slice';
 import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 
 function MainPage() {
   const dispatch = useDispatch();
   const allNewCollection = useSelector((state) =>
     newCollectionSelectors.selectAll(state)
   );
-  console.log(allNewCollection);
 
   useEffect(() => {
     dispatch(fetchNewCollection());
@@ -40,7 +38,13 @@ function MainPage() {
             </div>
           ))}
           <div>
-            <button className={styles.header_button}>СМОТРЕТЬ КАТАЛОГ</button>
+            <Link href={'/catalog'}>
+              <a>
+                <button className={styles.header_button}>
+                  СМОТРЕТЬ КАТАЛОГ
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
         <div className={styles.right_side}>
@@ -58,7 +62,11 @@ function MainPage() {
           <ClothesCard cardArray={allNewCollection} />
         </div>
         <div className={styles.all_catalog_button}>
-          <button>Весь каталог</button>
+          <Link href={'/catalog'}>
+            <a>
+              <button>Весь каталог</button>
+            </a>
+          </Link>
         </div>
       </div>
       <div className={styles.reviews_wrapper}>
