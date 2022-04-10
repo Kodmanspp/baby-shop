@@ -13,6 +13,7 @@ import {
   newCollectionSelectors,
 } from '../../redux/slice/newCollection.slice';
 import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 
 function MainPage() {
   const dispatch = useDispatch();
@@ -37,7 +38,13 @@ function MainPage() {
             </div>
           ))}
           <div>
-            <button className={styles.header_button}>СМОТРЕТЬ КАТАЛОГ</button>
+            <Link href={'/catalog'}>
+              <a>
+                <button className={styles.header_button}>
+                  СМОТРЕТЬ КАТАЛОГ
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
         <div className={styles.right_side}>
@@ -55,7 +62,11 @@ function MainPage() {
           <ClothesCard cardArray={allNewCollection} />
         </div>
         <div className={styles.all_catalog_button}>
-          <button>Весь каталог</button>
+          <Link href={'/catalog'}>
+            <a>
+              <button>Весь каталог</button>
+            </a>
+          </Link>
         </div>
       </div>
       <div className={styles.reviews_wrapper}>
