@@ -48,7 +48,7 @@ function Navbar({ menuActive, setMenuActive }) {
         <div className={styles.logo_navbar}>
           <Link href={'/'}>
             <a>
-              <Image src={logoIcon} alt='location' />
+              <Image width={35} height={35} src={logoIcon} alt='location' />
             </a>
           </Link>
         </div>
@@ -62,7 +62,7 @@ function Navbar({ menuActive, setMenuActive }) {
             </button>
           </div>
           <div className={styles.profile_wrapper}>
-            <Link href={'/'}>
+            <Link href={'/profile'}>
               <a>
                 <Image width={35} height={35} src={profileIcon} alt='loca' />
               </a>
