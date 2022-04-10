@@ -1,24 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './MainPage.module.scss';
 import pocan from '../../public/icons/pocan.png';
 import telka from '../../public/icons/telka.png';
 import elipse from '../../public/icons/Ellipse.png';
-import profileIcon from '../../public/icons/zeleniyChel.png';
 import Image from 'next/image';
 import ClothesCard from '../MainPageCards/ClothesCard';
 import Card from '../MainPageReviewCard/Card';
 import { accordionArray, cardArray, headerArray } from './MainPageData';
-import Accordion from '../Accordion/Accordion';
+import SimpleAccordion from '../Accordion/Accordion';
+import {
+  fetchNewCollection,
+  newCollectionSelectors,
+} from '../../redux/slice/newCollection.slice';
+import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 
 function MainPage() {
-  const [selectedAccor, setSelectedAccor] = useState(null);
+  const dispatch = useDispatch();
+  const allNewCollection = useSelector((state) =>
+    newCollectionSelectors.selectAll(state)
+  );
 
-  const toggleAccordion = (index) => {
-    if (selectedAccor === index) {
-      return setSelectedAccor(null);
-    }
-    setSelectedAccor(index);
-  };
+  useEffect(() => {
+    dispatch(fetchNewCollection());
+  }, []);
   return (
     <>
       <div className={styles.main_wrapper}>
@@ -33,7 +38,13 @@ function MainPage() {
             </div>
           ))}
           <div>
-            <button className={styles.header_button}>СМОТРЕТЬ КАТАЛОГ</button>
+            <Link href={'/catalog'}>
+              <a>
+                <button className={styles.header_button}>
+                  СМОТРЕТЬ КАТАЛОГ
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
         <div className={styles.right_side}>
@@ -48,13 +59,16 @@ function MainPage() {
       <div className={styles.new_collection_wrapper}>
         <h1 className={styles.new_collection_title}>новая коллекция</h1>
         <div className={styles.new_collection_card}>
-          <ClothesCard cardArray={cardArray} />
+          <ClothesCard cardArray={allNewCollection} />
         </div>
         <div className={styles.all_catalog_button}>
-          <button>Весь каталог</button>
+          <Link href={'/catalog'}>
+            <a>
+              <button>Весь каталог</button>
+            </a>
+          </Link>
         </div>
       </div>
-      {/* reviews */}
       <div className={styles.reviews_wrapper}>
         <div className={styles.reviews}>
           <Card />
@@ -89,16 +103,15 @@ function MainPage() {
         <div className={styles.accordion_wrapper}>
           <h2>ВОПРОС-ОТВЕТ</h2>
           <div className={styles.accordion_zxc}>
-            <Accordion />
-            {/* {accordionArray.map((item, index) => {
+            {accordionArray.map((item, index) => {
               return (
-                <Accordion
+                <SimpleAccordion
                   key={index}
                   title={item.question}
                   content={item.answer}
                 />
               );
-            })} */}
+            })}
           </div>
         </div>
       </div>

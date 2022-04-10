@@ -19,13 +19,7 @@ function Layout({ children }) {
       <Navbar menuActive={menuActive} setMenuActive={setMenuActive} />
       <div className={styles.navbar_routes_wrapper}>
         {router.pathname === '/cart' ? null : (
-          <div
-            className={
-              router.pathname === '/favorite'
-                ? styles.navbar
-                : styles.navbar_routes
-            }
-          >
+          <div className={router.pathname === '/favorite' ? styles.navbar : ''}>
             {router.pathname === '/favorite' ? null : (
               <div className={styles.navbar_routes}>
                 <div>

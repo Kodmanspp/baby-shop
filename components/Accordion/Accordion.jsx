@@ -1,35 +1,24 @@
-import { useState } from 'react';
-import { Collapse } from 'antd';
-import 'antd/dist/antd.css';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const { Panel } = Collapse;
-const Accordion = (props) => {
-  const text = `
-    A dog is a type of domesticated animal.
-    Known for its loyalty and faithfulness,
-    it can be found as a welcome guest in many households across the world.
-  `;
-  const [active, setActive] = useState(false);
-
+export default function SimpleAccordion(props) {
   return (
-    // <div className={`accordion ${active ? 'active' : ''}`}>
-    //   <div className='accordion__title' onClick={() => setActive(!active)}>
-    //     <span>{props.title}</span>
-    //   </div>
-    //   <div className='accordion__content'>{props.content}</div>
-    // </div>
-    <Collapse accordion>
-      <Panel header='This is panel header 1' key='1'>
-        <p>{text}</p>
-      </Panel>
-      <Panel header='This is panel header 2' key='2'>
-        <p>{text}</p>
-      </Panel>
-      <Panel header='This is panel header 3' key='3'>
-        <p>{text}</p>
-      </Panel>
-    </Collapse>
+    <div>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls='panel1a-content'
+          id='panel1a-header'
+        >
+          <Typography>{props.title}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{props.content}</Typography>
+        </AccordionDetails>
+      </Accordion>
+    </div>
   );
-};
-
-export default Accordion;
+}
