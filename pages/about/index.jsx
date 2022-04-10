@@ -4,8 +4,9 @@ import img1 from '../../public/icons/img1.png';
 import img2 from '../../public/icons/img2.png';
 import Image from 'next/image';
 import greyElipse from '../../public/icons/grey_zalupa.svg';
+import {nanoid} from "nanoid";
 
-const About = () => {
+const Index = () => {
   const brandsFirst = [
     { title: 'Sim-Sim' },
     { title: 'Звёздочка' },
@@ -64,7 +65,7 @@ const About = () => {
           <div>
             {brandsFirst.map((item) => {
               return (
-                <div>
+                <div key={nanoid()}>
                   <Image src={greyElipse} alt='elipse' />
                   <span>{item.title}</span>
                 </div>
@@ -74,7 +75,7 @@ const About = () => {
           <div>
             {brandsSecond.map((item) => {
               return (
-                <div>
+                <div key={nanoid()}>
                   <Image src={greyElipse} alt='elipse' />
                   <span>{item.title}</span>
                 </div>
@@ -89,7 +90,7 @@ const About = () => {
           <div>
             {aboutMagaz.map((item) => {
               return (
-                <div>
+                <div key={nanoid()}>
                   <Image src={greyElipse} alt='elipse' />
                   <span>{item.title}</span>
                 </div>
@@ -102,4 +103,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Index;

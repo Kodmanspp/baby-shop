@@ -23,7 +23,7 @@ function Layout({ children }) {
             {router.pathname === '/favorite' ? null : (
               <div className={styles.navbar_routes}>
                 <div>
-                  <Link href={'/mainpage'}>
+                  <Link href={'/'}>
                     <a>главная</a>
                   </Link>
                 </div>
@@ -33,7 +33,7 @@ function Layout({ children }) {
                   </Link>
                 </div>
                 <div>
-                  <Link href='/AboutMagazine/About'>
+                  <Link href='/about'>
                     <a>о магазине</a>
                   </Link>
                 </div>
@@ -43,17 +43,17 @@ function Layout({ children }) {
                   </Link>
                 </div>
                 <div>
-                  <Link href={'/Delivery/Delivery'}>
+                  <Link href={'/delivery'}>
                     <a>Доставка</a>
                   </Link>
                 </div>
                 <div>
-                  <Link href={'/reviewspage'}>
+                  <Link href={'/reviews'}>
                     <a>Отзывы</a>
                   </Link>
                 </div>
                 <div>
-                  <Link href={'/Contact/Contact'}>
+                  <Link href={'/contact'}>
                     <a>Контакты</a>
                   </Link>
                 </div>
