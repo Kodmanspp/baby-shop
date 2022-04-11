@@ -5,16 +5,21 @@ import Image from 'next/image';
 import favoriteIcon from '../../public/icons/favorite.svg';
 import palkaIcon from '../../public/icons/palkaebanaya.svg';
 import cartIcon from '../../public/icons/cart.svg';
-function ClothesCard({ cardArray }) {
+import {nanoid} from "nanoid";
+function ClothesCard({cardRef, cardArray }) {
   return (
     <>
       {cardArray.map((item) => {
         return (
-          <div key={item.id} className={styles.card_wrapper}>
+          <div ref={cardRef} key={nanoid()} className={styles.card_wrapper}>
             <span className={styles.card_year}>{item.year} лет</span>
             <span className={styles.card_type}>новинка</span>
             <div className={styles.card_clothes__image}>
-              <img width={180} height={180} src={item.image} alt='clothes' />
+              {item.image ?
+                <Image width={180} height={180} src={item?.image} alt='clothes' layout="fixed" />
+                :
+                <img width={180} height={180} src={item?.image} alt='clothes' layout="fixed" />
+              }
             </div>
             <div className={styles.card_about_clothes}>
               <div>
