@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewsPage from '../components/ReviewsPage/ReviewsPage';
 
-function reviewspage() {
+function reviews() {
   return (
     <>
       <ReviewsPage />
@@ -9,4 +9,4 @@ function reviewspage() {
   );
 }
 
-export default reviewspage;
+export default reviews;
